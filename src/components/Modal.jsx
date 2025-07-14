@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 function Modal({ color, onClose }) {
   return (
     <motion.div
-      className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center overflow-auto"
+      className="fixed inset-0 bg-black/80 backdrop-blur-lg z-50 flex items-center justify-center overflow-auto"
       onClick={onClose}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -13,7 +13,7 @@ function Modal({ color, onClose }) {
       <motion.div
         layoutId={color}
         style={{ backgroundColor: color }}
-        className="rounded-xl shadow-xl w-full max-w-2xl mx-4 my-8 overflow-hidden will-change transform-gpu"
+        className="rounded-xl shadow-xl w-full max-w-2xl mx-4 my-8 overflow-hidden will-change transform-gpu "
         onClick={(e) => e.stopPropagation()}
       >
         <div className="h-[500px] bar-thumb-blue-500 " />

@@ -1,0 +1,42 @@
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Универсально для всех браузеров с поддержкой */
+.scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent; /* светлая тема по умолчанию */
+}
+
+/* Темная тема: применится если html имеет класс dark */
+.dark .scrollbar {
+  scrollbar-color: #52525b transparent;
+}
+
+/* Chrome/Edge/Safari (Webkit) */
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 6px;
+}
+
+.dark .scrollbar::-webkit-scrollbar-thumb {
+  background-color: #52525b;
+}
